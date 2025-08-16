@@ -1,14 +1,18 @@
-.card {
-  transition: transform .25s ease, box-shadow .25s ease;
-}
-.card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 .75rem 1.5rem rgba(0,0,0,.15);
-}
+:root { --fade-duration: .6s; }
+
 .fade-in {
   opacity: 0;
-  animation: fadeIn .6s forwards ease;
+  transform: translateY(6px);
+  transition: opacity var(--fade-duration) ease, transform var(--fade-duration) ease;
 }
-@keyframes fadeIn {
-  to { opacity: 1; }
+.fade-in.show { opacity: 1; transform: none; }
+
+.card { transition: transform .25s ease, box-shadow .25s ease; }
+.card:hover { transform: translateY(-4px); box-shadow: 0 .75rem 1.5rem rgba(0,0,0,.15); }
+
+.hero {
+  background: linear-gradient(180deg, #111 0%, #222 100%);
+  color: #fff;
 }
+
+footer { font-size: .9rem; }
